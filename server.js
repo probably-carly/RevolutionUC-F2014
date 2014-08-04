@@ -6,6 +6,8 @@ methodOverride = require('method-override');
 
 var db = require('./config/db');
 
+mongoose.connect(db.url);
+
 var port = process.env.PORT || 3010;
 
 app.use(bodyParser.json());
