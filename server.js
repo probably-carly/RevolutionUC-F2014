@@ -22,6 +22,8 @@ app.use(express.static(__dirname + '/public'));
 
 require('./app/routes')(app);
 
+var models = require('./app/models/hacker.js')(mongoose);
+
 app.listen(port);
 console.log('Magic happens on port ' + port);
 exports = module.exports = app;

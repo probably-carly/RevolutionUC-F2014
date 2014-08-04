@@ -1,12 +1,34 @@
 module.exports = function (mongoose) {
 	var Hacker = mongoose.model('Hacker', {
-		name: String,
-		email: String,
-		university: String,
-		college: String,
-		major: String,
-		gender: String,
-		bio: String,
+		name: {
+			type: String,
+			required: true
+		},
+		email: { 
+			type: String, 
+			required: true,
+			unique: true
+		},
+		university: {
+			type: String,
+			required: true
+		},
+		college: {
+			type: String,
+			required: true
+		},
+		major: {
+			type: String,
+			required: true
+		},
+		gender: {
+			type: String,
+			required: true
+		},
+		bio: {
+			type: String,
+			required: true
+		},
 		resume: String
 	});
 
