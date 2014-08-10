@@ -1,6 +1,6 @@
 module.exports = function (app) {
 	var mongoose = require('mongoose');
-	var models = require('./models/hacker.js')(mongoose);
+	var Hacker = require('./models/hacker.js');
 
 	app.get('/api/hackers', function (req, res) {
 		Hacker.find(function (err, hackers) {
