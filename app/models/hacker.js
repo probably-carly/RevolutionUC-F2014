@@ -1,5 +1,6 @@
 module.exports = function (mongoose) {
-	var Hacker = mongoose.model('Hacker', {
+	Schema = mongoose.Schema;
+	var schema = new Schema({
 		name: {
 			type: String,
 			required: true
@@ -33,8 +34,8 @@ module.exports = function (mongoose) {
 	});
 
 	var models = {
-		Hackers : mongoose.model('Hacker', Hacker)
+		Hackers : mongoose.model('Hacker', schema)
 	};
 
 	return models;
-}
+};
