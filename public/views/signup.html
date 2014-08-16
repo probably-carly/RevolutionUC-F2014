@@ -6,37 +6,37 @@
 			<div class="form-group">
 				<label for="name" class="col-sm-3 control-label">Name</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="name" placeholder="Darth Vader">
+					<input type="text" class="form-control" id="name" placeholder="Darth Vader" ng-model="user.name">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="email" class="col-sm-3 control-label">Email</label>
 				<div class="col-sm-9">
-					<input type="email" class="form-control" id="email" placeholder="dvader@mail.uc.edu">
+					<input type="email" class="form-control" id="email" placeholder="dvader@mail.uc.edu" ng-model="user.Email">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="university" class="col-sm-3 control-label">University</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="university" name="university" placeholder="University of Cincinnati" ng-model="uni">
+					<input type="text" class="form-control" id="university" name="university" placeholder="University of Cincinnati" ng-model="user.University">
 				</div>
 			</div>
 			<div class="form-group animate-show" ng-show="uni == 'University of Cincinnati'">
 				<label for="college" class="col-sm-3 control-label">College</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="college" placeholder="DAAP, CEAS, CECH, etc.">
+					<input type="text" class="form-control" id="college" placeholder="DAAP, CEAS, CECH, etc." ng-model="user.College">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="major" class="col-sm-3 control-label">Major</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="major" placeholder="Sith Lord">
+					<input type="text" class="form-control" id="major" placeholder="Sith Lord" ng-model="user.Major">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="gender" class="col-sm-3 control-label">Gender</label>
 				<div class="col-sm-9">
-					<select class="form-control" id="gender">
+					<select class="form-control" id="gender" ng-model="user.Gender">
 						<option value="" disabled selected>I identify my gender as...</option>
 						<option value="0">Male</option>
 						<option value="1">Female</option>
@@ -47,25 +47,25 @@
 			<div class="form-group">
 				<label for="bio" class="col-sm-3 control-label">About/Bio</label>
 				<div class="col-sm-9">
-					<textarea class="form-control" id="bio" rows="4" placeholder="Include links and a little bit about yourself."></textarea>
+					<textarea class="form-control" id="bio" rows="4" placeholder="Include links and a little bit about yourself." ng-model="user.Bio"></textarea>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="diet" class="col-sm-3 control-label">Dietary Restrictions</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="diet" placeholder="Gluten free, Vegetarian, Eggs, and Tomatoes">
+					<input type="text" class="form-control" id="diet" placeholder="Gluten free, Vegetarian, Eggs, and Tomatoes" ng-model="user.Diet">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="resume" class="col-sm-3 control-label">Resumé</label>
 				<div class="col-sm-9">
-	    			<input type="file" id="resume">
+	    			<input type="file" id="resume" ng-model="user.Resume">
     				<p class="help-block">Upload your resumé!</p>	
 				</div>
 			</div>
 			<div style="text-align: center; margin: 0 0 100 0">
-				<button class="btn btn-primary btn-lg" style="margin: 5 5 50 5;" ng-click="close();">I wanna go!</button>
-				<button class="btn btn-warning btn-lg" style="margin:5px;" ng-click="cancel()">I changed my mind.</button>	
+				<button class="btn btn-primary btn-lg" style="margin: 5 5 50 5;" ng-click="submit();">I wanna go!</button>
+				<button class="btn btn-warning btn-lg" style="margin:5px;" ng-click="forgetIt();">I changed my mind.</button>	
 			</div>
 		</form>
 		<div style="height: 20px; width: 100%; background-color: black; opacity: 0"></div>

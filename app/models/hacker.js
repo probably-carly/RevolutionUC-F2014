@@ -2,34 +2,35 @@ var mongoose = require('mongoose');
 var HackerSchema = mongoose.Schema({
 	name: {
 		type: String,
-		required: true
+		required: false
 	},
 	email: { 
 		type: String, 
-		required: true,
+		required: false,
 		unique: true
 	},
 	university: {
 		type: String,
-		required: true
+		required: false
 	},
 	college: {
 		type: String,
-		required: true
+		required: false
 	},
 	major: {
 		type: String,
-		required: true
+		required: false
 	},
 	gender: {
 		type: String,
-		required: true
+		required: false
 	},
 	bio: {
 		type: String,
-		required: true
+		required: false
 	},
 	resume: String
 });
 
 
+module.exports = HackerSchema;

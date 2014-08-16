@@ -1,6 +1,5 @@
 angular.module('RevUc', ['ui.bootstrap'])
-.controller('SignUpCtrl', function ($scope, $modal, $log) {
-	
+.controller('SignUpCtrl', function ($scope, $modal, $log) {	
 	$scope.open = function () {
 		var modalInstance = $modal.open({
 			templateUrl: 'views/signup.html',
@@ -9,8 +8,16 @@ angular.module('RevUc', ['ui.bootstrap'])
 		});
 	};
 })
-.controller('SignUpInstanceCtrl', function ($scope, $modalInstance) {
-	$scope.cancel = function () {
-		$modalInstance.dismiss('cancel');
+.controller('SignUpInstanceCtrl', function ($scope, $http) {
+	$scope.user = {};
+
+	$scope.forgetIt = function () {
+		alert($scope.user.Name);
+	};
+
+	$scope.submit = function () {
+		$http.post('/api/newuser', $scope.user).success(function (responseData) {
+			console.log(responseData);
+		});
 	};
 });
