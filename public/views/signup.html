@@ -59,11 +59,9 @@
 			<div class="form-group">
 				<label for="resume" class="col-sm-3 control-label">Resumé</label>
 				<div class="col-sm-9">
-	    			<input type="file" id="resume" ng-model="user.resume">
-    				<p class="help-block">Upload your resumé!</p>	
+                    <button id="resume" class="btn btn-primary btn-lg" style="margin: 5 5 50 5;" ng-click="uploadResume();">Upload Resume</button>
 				</div>
 			</div>
-            <input type="filepicker-dragdrop" data-fp-multiple="true"/>
 			<div style="text-align: center; margin: 0 0 100 0">
 				<button class="btn btn-primary btn-lg" style="margin: 5 5 50 5;" ng-click="submit();">I wanna go!</button>
 				<button class="btn btn-warning btn-lg" style="margin:5px;" ng-click="forgetIt();">I changed my mind.</button>	

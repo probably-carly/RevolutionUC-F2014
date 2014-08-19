@@ -8,7 +8,7 @@ angular.module('RevUc', ['ui.bootstrap'])
 		});
 	};
 })
-.controller('SignUpInstanceCtrl', function ($scope, $http) {
+.controller('SignUpInstanceCtrl', function ($scope, $http, $window) {
 	$scope.user = {};
 
 	$scope.forgetIt = function () {
@@ -20,4 +20,11 @@ angular.module('RevUc', ['ui.bootstrap'])
 			console.log(responseData);
 		});
 	};
+
+  $scope.uploadResume = function () {
+    $window.filepicker.pick(function(InkBlob){
+      console.log(InkBlob.url);
+    });
+  }
+
 });
