@@ -188,8 +188,8 @@ p {
     }
 
 img.logo{
-  min-width:280px;
-  width: 45%
+  width: 75%;
+  margin-left: 50px;
 }
 .center{
   text-align: center;
