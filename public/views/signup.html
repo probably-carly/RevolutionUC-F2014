@@ -59,8 +59,9 @@
 			<div class="form-group">
 				<label for="resume" class="col-sm-3 control-label">Resumé</label>
 				<div class="col-sm-9">
-                    <button id="resume" class="btn btn-primary btn-lg" style="margin: 5 5 50 5;" ng-click="uploadResume();">Upload Resume</button>
+                    <button id="resume-button" class="btn btn-primary btn-lg" style="margin: 5 5 50 5;" ng-click="uploadResume();">Upload Resume</button>
 				</div>
+                <input type="hidden" id="resume" ng-required ng-model="user.resume">
 			</div>
 			<div style="text-align: center; margin: 0 0 100 0">
 				<button class="btn btn-primary btn-lg" style="margin: 5 5 50 5;" ng-click="submit();">I wanna go!</button>

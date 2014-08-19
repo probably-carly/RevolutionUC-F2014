@@ -22,8 +22,8 @@ angular.module('RevUc', ['ui.bootstrap'])
 	};
 
   $scope.uploadResume = function () {
-    $window.filepicker.pick(function(InkBlob){
-      console.log(InkBlob.url);
+    $window.filepicker.pick(function(uploadedFile){
+      $scope.user.resume = uploadedFile.url
     });
   }
 
