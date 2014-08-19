@@ -12,9 +12,9 @@ angular.module('RevUc', ['ui.bootstrap'])
 	$scope.user = {};
 
 	$scope.forgetIt = function () {
-		alert($scope.user.Name);
+	    $scope.$dismiss();
 	};
-
+    
 	$scope.submit = function () {
 		$http.post('/api/newuser', $scope.user).success(function (responseData) {
 			console.log(responseData);
@@ -23,8 +23,10 @@ angular.module('RevUc', ['ui.bootstrap'])
 
   $scope.uploadResume = function () {
     $window.filepicker.pick(function(uploadedFile){
-      $scope.user.resume = uploadedFile.url
+      $scope.user.resume = uploadedFile;
     });
+    $scope.user.resume = {filename:"Loading..."};
+
   }
 
 });
