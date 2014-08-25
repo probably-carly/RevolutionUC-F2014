@@ -153,6 +153,9 @@ body {
   .featurette-heading {
     font-size: 50px;
   }
+  .btn {
+      margin-top: 5%;
+  }
 
 }
 
@@ -195,7 +198,7 @@ p {
 
 img.logo{
   width: 75%;
-  margin-left: 50px;
+  margin: 0 auto;
 }
 .center{
   text-align: center;
@@ -205,7 +208,3 @@ img.logo{
 -moz-filter: brightness(50%) blur(5px);
 }
 
-.zipscene{
-  width: 100%;
-  max-width: 486px;
-}

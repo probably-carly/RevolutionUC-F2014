@@ -59,16 +59,25 @@
 			<div class="form-group">
 				<label for="resume" class="col-sm-3 control-label">Resumé</label>
 				<div class="col-sm-9">
-                    <button id="resume-button" type="button" class="btn btn-primary btn-lg" style="margin: 5 5 50 5;" ng-click="uploadResume();">Upload Resume</button>
+                    <button id="resume" type="button" class="btn btn-default" style="margin: 5 5 50 5;" ng-click="uploadResume();">Upload Resume</button>
 		    {{user.resume.filename}}
 				</div>
                 <input type="hidden" id="resume" ng-model="user.resume.url" required>
 
 			</div>
-			<div style="text-align: center; margin: 0 0 100 0">
-				<button class="btn btn-primary btn-lg" style="margin: 5 5 50 5;" ng-click="submit();" ng-disabled="signupform.$invalid">I wanna go!</button>
-				<button type="button" class="btn btn-warning btn-lg" style="margin:5px;" ng-click="forgetIt();">I changed my mind.</button>	
-			</div>
+            <div class="row" style="text-align: center;">
+                <div class="col-md-2" style="background-color: black; opacity: 0">
+                </div>
+                <div class="col-md-4" style="text-align: center;">
+                    <button class="btn btn-primary btn-lg" style="margin: 5px; width: 100%;" ng-click="submit();" ng-disabled="signupform.$invalid">I wanna go!</button>
+                </div>
+                <div class="col-md-4" style="text-align: center;">
+                    <button type="button" class="btn btn-danger btn-lg" style="margin:5px; width: 100%;" ng-click="forgetIt();">I changed my mind.</button>
+                </div>
+                <div class="col-md-2" style="background-color: black; opacity: 0">
+                </div>
+            </div>
+
 		</form>
 		<div style="height: 20px; width: 100%; background-color: black; opacity: 0"></div>
 	</div>
