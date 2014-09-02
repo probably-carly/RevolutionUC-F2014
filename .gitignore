@@ -4,5 +4,5 @@
 Session.vim
 .netrwhist
 *~
-./config/*
-./node_modules/*
+config/
+node_modules/
