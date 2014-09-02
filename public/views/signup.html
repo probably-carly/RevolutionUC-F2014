@@ -15,19 +15,31 @@
 					<input type="email" class="form-control" id="email" placeholder="dvader@mail.uc.edu" ng-model="user.email" required>
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group" ng-hide="user.isHighSchoolStudent">
 				<label for="university" class="col-sm-3 control-label">University</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="university" name="university" placeholder="University of Cincinnati" ng-model="user.university" ng-required>
+					<input type="text" class="form-control" id="university" name="university" placeholder="University of Cincinnati" ng-model="user.university" ng-required="!user.isHighSchoolStudent">
 				</div>
 			</div>
-			<div class="form-group animate-show" ng-show="uni == 'University of Cincinnati'">
+            <div class="form-group" ng-show="user.isHighSchoolStudent">
+                <label for="highSchool" class="col-sm-3 control-label">High School</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="highSchool" name="highSchool" placeholder="Tattooine High School" ng-model="user.highSchool" ng-required="user.isHighSchoolStudent">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="isHighSchoolStudent" class="col-sm-3 control-label"> </label>
+                <div class="col-sm-9">
+                    <input type="checkbox" id="isHighSchoolStudent" ng-model="user.isHighSchoolStudent"> I'm in high school!
+                </div>
+            </div>
+			<div class="form-group animate-show" ng-show="user.university == 'University of Cincinnati'">
 				<label for="college" class="col-sm-3 control-label">College</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control" id="college" placeholder="DAAP, CEAS, CECH, etc." ng-model="user.college">
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group" ng-hide="user.isHighSchoolStudent">
 				<label for="major" class="col-sm-3 control-label">Major</label>
 				<div class="col-sm-9">
 					<input type="text" class="form-control" id="major" placeholder="Sith Lord" ng-model="user.major">
@@ -62,7 +74,7 @@
                     <button id="resume" type="button" class="btn btn-default" style="margin: 5 5 50 5;" ng-click="uploadResume();">Upload Resume</button>
 		    {{user.resume.filename}}
 				</div>
-                <input type="hidden" id="resume" ng-model="user.resume.url" required>
+                <input type="hidden" id="resume" ng-model="user.resume.url" ng-required="!user.isHighSchoolStudent">
 
 			</div>
             <div class="row" style="text-align: center;">
