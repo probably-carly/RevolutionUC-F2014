@@ -2,8 +2,11 @@ var express = require('express'),
 app = express(),
 mongoose = require('mongoose'),
 bodyParser = require('body-parser'),
-methodOverride = require('method-override')
+methodOverride = require('method-override'),
+AWS = require('aws-sdk'),
 morgan = require('morgan');
+
+AWS.config.loadFromPath('./config/aws.json');
 
 var db = require('./config/db');
 
@@ -18,7 +21,7 @@ app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
-require('./app/routes')(app, mongoose);
+require('./app/routes')(app, mongoose, AWS);
 
 
 

@@ -68,15 +68,13 @@
 					<input type="text" class="form-control" id="diet" placeholder="Gluten free, Vegetarian, Eggs, and Tomatoes" ng-model="user.diet">
 				</div>
 			</div>
-			<div class="form-group">
-				<label for="resume" class="col-sm-3 control-label">Resumé</label>
-				<div class="col-sm-9">
-                    <button id="resume" type="button" class="btn btn-default" style="margin: 5 5 50 5;" ng-click="uploadResume();">Upload Resume</button>
-		    {{user.resume.filename}}
-				</div>
-                <input type="hidden" id="resume" ng-model="user.resume.url" ng-required="!user.isHighSchoolStudent">
+            <div class="form-group">
+                <label for="resume" class="col-sm-3 control-label">Resume</label>
+                <div class="col-sm-9">
+                    <input type="file" class="form-control" id="resume" name="resume" ng-model="user.resume">
+                </div>
+            </div>
 
-			</div>
             <div class="row" style="text-align: center;">
                 <div class="col-md-2" style="background-color: black; opacity: 0">
                 </div>
