@@ -21,12 +21,8 @@ angular.module('RevUc', ['ui.bootstrap'])
 		});
 	};
 
-  $scope.uploadResume = function () {
-    $window.filepicker.pick(function(uploadedFile){
-      $scope.user.resume = uploadedFile;
-    });
-    $scope.user.resume = {filename:"Loading..."};
-
-  }
+    $scope.uploadResume = function () {
+        console.log("Resume!");
+    }
 
 });
