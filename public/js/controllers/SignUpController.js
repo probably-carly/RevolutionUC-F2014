@@ -21,7 +21,10 @@ app.controller('SignUpCtrl', function ($scope, $modal, $log) {
 	};
 
     $scope.uploadResume = function () {
-        console.log("Resume!");
+        $window.filepicker.pick(function(uploadedFile){
+                 $scope.user.resume = uploadedFile;
+              });
+        $scope.user.resume = {filename:"Loading..."};
     }
 
 });
