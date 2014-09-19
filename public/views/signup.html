@@ -71,8 +71,9 @@
             <div class="form-group">
                 <label for="resume" class="col-sm-3 control-label">Resume</label>
                 <div class="col-sm-9">
-                    <input type="file" class="form-control" id="resume" name="resume" ng-model="user.resume">
+                    <input type="hidden" class="form-control" id="resume" name="resume" ng-model="user.resume">
                 </div>
+                <button class="btn btn-primary" ng-click="uploadResume();">Upload Resume</button>
             </div>
 
             <div class="row" style="text-align: center;">

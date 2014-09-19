@@ -33,10 +33,10 @@ module.exports = function (app, mongoose, AWS) {
         });
     });
 
-    app.get('/api/upload', function (req, res) {
-
-
-
-
-    });
+//    app.get('/api/upload', function (req, res) {
+//
+//
+//
+//
+//    });
 };
