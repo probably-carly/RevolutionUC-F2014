@@ -204,7 +204,7 @@ img.logo{
   text-align: center;
 }
 .blur {
- -webkit-filter: brightness(50%) blur(2.5px);
--moz-filter: brightness(50%) blur(5px);
+    /*-webkit-filter: brightness(50%) blur(2.5px);*/
+    /*filter: brightness(50%) blur(5px);*/
 }
 
