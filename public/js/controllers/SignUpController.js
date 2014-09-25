@@ -17,9 +17,13 @@ app.controller('SignUpCtrl', function ($scope, $modal, $log) {
     
 	$scope.submit = function () {
 		$http.post('/api/newuser', $scope.user).success(function (responseData) {
-			console.log(responseData);
-            $scope.$dismiss();
-            toastr.success("We'll see you there!");
+			if (responseData.err) {
+                toastr.error("It looks like you've signed up already!", "Oh Dear!");
+                console.log("User already signed up!");
+            } else {
+                $scope.$dismiss();
+                toastr.success("We'll see you there!");
+            }
 		});
 	};
 

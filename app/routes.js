@@ -4,10 +4,13 @@ module.exports = function (app, mongoose) {
 
     app.post('/api/newuser', function (req, res) {
 
-        console.log(req.files);
+        //console.log(req.files);
 
         Hacker.create(req.body, function (err) {
-            console.error(err);
+            if (err) {
+                res.send(err);
+                return;
+            }
 
             Hacker.find(function (err, hackers) {
                 if (err) {
