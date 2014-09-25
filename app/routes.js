@@ -6,12 +6,6 @@ module.exports = function (app, mongoose) {
 
         console.log(req.files);
 
-        var params = {
-            Bucket: 'RevolutionUC_F2014',
-            Key: 'curt.pdf',
-            Body: fs.readFileSync('./curt.pdf')
-        };
-
         Hacker.create(req.body, function (err) {
             console.error(err);
 
@@ -24,10 +18,4 @@ module.exports = function (app, mongoose) {
         });
     });
 
-//    app.get('/api/upload', function (req, res) {
-//
-//
-//
-//
-//    });
 };

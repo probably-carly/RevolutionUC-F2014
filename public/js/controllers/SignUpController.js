@@ -12,12 +12,14 @@ app.controller('SignUpCtrl', function ($scope, $modal, $log) {
 
 	$scope.forgetIt = function () {
 	    $scope.$dismiss();
+        toastr.error("Forgotten!");
 	};
     
 	$scope.submit = function () {
 		$http.post('/api/newuser', $scope.user).success(function (responseData) {
 			console.log(responseData);
             $scope.$dismiss();
+            toastr.success("We'll see you there!");
 		});
 	};
 
