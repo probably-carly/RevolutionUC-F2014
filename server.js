@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
-require('./app/routes')(app, mongoose, AWS);
+require('./app/routes')(app, mongoose);
 
 
 

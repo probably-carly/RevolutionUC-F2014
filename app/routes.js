@@ -1,7 +1,6 @@
-module.exports = function (app, mongoose, AWS) {
+module.exports = function (app, mongoose) {
     var Hacker = mongoose.model('Hacker', require('./models/hacker.js'));
     var fs = require('fs');
-    var s3 = new AWS.S3();
 
     app.post('/api/newuser', function (req, res) {
 
@@ -12,14 +11,6 @@ module.exports = function (app, mongoose, AWS) {
             Key: 'curt.pdf',
             Body: fs.readFileSync('./curt.pdf')
         };
-
-        s3.putObject(params, function (err, data) {
-            if (err) {
-                console.log(err);
-            }
-            console.log(data);
-
-        });
 
         Hacker.create(req.body, function (err) {
             console.error(err);
