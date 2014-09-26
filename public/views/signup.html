@@ -71,11 +71,15 @@
             <div class="form-group">
                 <label for="resume" class="col-sm-3 control-label">Resume</label>
                 <div class="row">
-                    <div class="col-lg-3" style="background-color: black; opacity: 0"></div>
-                    <input type="hidden" class="form-control col-lg-4" id="resume" name="resume" ng-model="user.resume">
-                    <label class="col-lg-6" ng-show="user.resume"> Successfully uploaded: {{user.resume}}</label>
+                    <input type="hidden" class="form-control" id="resume" name="resume" ng-model="user.resume">
+                    <div class="col-lg-3">
+                        <button class="btn btn-primary" ng-click="uploadResume();">Upload Resume</button>
+                    </div>
+                    <div class="col-lg-5">
+                        <label ng-show="user.resume">{{user.resume}}</label>
+                    </div>
+
                 </div>
-                <button class="btn btn-primary" ng-click="uploadResume();">Upload Resume</button>
             </div>
             <div class="row" style="text-align: center;">
                 <div class="col-md-2" style="background-color: black; opacity: 0">
