@@ -65,7 +65,7 @@
 			<div class="form-group">
 				<label for="diet" class="col-sm-3 control-label">Dietary Restrictions</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="diet" placeholder="Gluten free, Vegetarian, Eggs, and Tomatoes" ng-model="user.diet">
+					<input type="text" class="form-control" id="diet" placeholder="Gluten-free, Vegetarian, Eggs, and Tomatoes" ng-model="user.diet">
 				</div>
 			</div>
             <div class="form-group">
@@ -85,7 +85,7 @@
                 <div class="col-md-2" style="background-color: black; opacity: 0">
                 </div>
                 <div class="col-md-4" style="text-align: center;">
-                    <button class="btn btn-primary btn-lg" style="margin: 5px; width: 100%;" ng-click="submit();" ng-disabled="signupform.$invalid">I wanna go!</button>
+                    <button class="btn btn-primary btn-lg" style="margin: 5px; width: 100%;" ng-click="submit();" ng-disabled="signupform.$invalid || !user.resume">I wanna go!</button>
                 </div>
                 <div class="col-md-4" style="text-align: center;">
                     <button type="button" class="btn btn-danger btn-lg" style="margin:5px; width: 100%;" ng-click="forgetIt();">I changed my mind.</button>
