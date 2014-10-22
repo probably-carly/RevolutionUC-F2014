@@ -8,6 +8,7 @@ module.exports = function (app, mongoose) {
                 res.send(err);
                 return;
             }
+            res.send({"response": "200"});
         });
     });
 
