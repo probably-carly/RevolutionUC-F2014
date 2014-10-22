@@ -29,6 +29,14 @@ var HackerSchema = mongoose.Schema({
 		type: String,
 		required: false
 	},
+    isHighSchoolStudent: {
+        type: String,
+        required: false
+    },
+    highSchool: {
+        type: String,
+        required: false
+    },
 	resume: String
 });
 
