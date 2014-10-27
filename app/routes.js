@@ -12,19 +12,6 @@ module.exports = function (app, mongoose) {
         });
     });
 
-    app.post('/api/users', function(req, res) {
-        if(req.body.apiKey == "rev0lutionUCHackerK3y") {
-            Hacker.find(function(err, hackers) {
-                if(!err) {
-                    res.json(hackers);
-                }
-            })
-        }else {
-            res.send(403);
-        }
-
-    });
-
     app.get('/api/hackercount', function (req, res) {
         Hacker.count(function (err, count) {
             if (!err) {
