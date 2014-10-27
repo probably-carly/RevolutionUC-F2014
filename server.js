@@ -12,7 +12,7 @@ var db = require('./config/db');
 
 mongoose.connect(db.url);
 
-var port = 80;
+var port = 3010;
 
 app.use(morgan('dev'));
 
