@@ -15,11 +15,9 @@ module.exports = function (app, mongoose) {
 
   app.get('/attending/:id', function (req, res) {
     Hacker.findOne({_id: req.params.id}, function (err, hacker) {
-      //if (err) throw err;
-      console.log(util.inspect(err));
+      if (err) throw err;
 
       hacker.coming = true;
-      console.log(util.inspect(hacker));
       hacker.save(function (err) {
         if (err) throw err;
       });
