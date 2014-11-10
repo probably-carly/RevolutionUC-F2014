@@ -12,6 +12,28 @@ module.exports = function (app, mongoose) {
     });
   });
 
+  app.get('/attending/:id', function (req, res) {
+    Hacker.findOne({id: req.params.id}, function (err, hacker) {
+      if (err) throw err;
+
+      hacker.coming = true;
+      hacker.save(function (err) {
+        if (err) throw err;
+      });
+    });
+  });
+
+  app.get('/not/:id', function (req, res) {
+    Hacker.findOne({id: req.params.id}, function (err, hacker) {
+      if (err) throw err;
+
+      hacker.coming = false;
+      hacker.save(function (err) {
+        if (err) throw err;
+      });
+    });
+  });
+
   app.get('/api/hackercount', function (req, res) {
     Hacker.count(function (err, count) {
       if (!err) {
