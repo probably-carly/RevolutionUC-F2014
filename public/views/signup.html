@@ -1,99 +1,123 @@
 <div style="width: 75%; margin: 0 auto;" role="main" ng-controller="SignUpInstanceCtrl">
-		<h1>Sign-up</h1>
-		<br>
-		<br>
-		<form class="form-horizontal" role="form" name="signupform">
-			<div class="form-group">
-				<label for="name" class="col-sm-3 control-label">Name</label>
-				<div class="col-sm-9">
-					<input type="text" class="form-control" id="name" placeholder="Darth Vader" ng-model="user.name" required>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="email" class="col-sm-3 control-label">Email</label>
-				<div class="col-sm-9">
-					<input type="email" class="form-control" id="email" placeholder="dvader@mail.uc.edu" ng-model="user.email" required>
-				</div>
-			</div>
-			<div class="form-group" ng-hide="user.isHighSchoolStudent">
-				<label for="university" class="col-sm-3 control-label">University</label>
-				<div class="col-sm-9">
-					<input type="text" class="form-control" id="university" name="university" placeholder="University of Coruscant" ng-model="user.university" ng-required="!user.isHighSchoolStudent">
-				</div>
-			</div>
-            <div class="form-group" ng-show="user.isHighSchoolStudent">
-                <label for="highSchool" class="col-sm-3 control-label">High School</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="highSchool" name="highSchool" placeholder="Tattooine High School" ng-model="user.highSchool" ng-required="user.isHighSchoolStudent">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="isHighSchoolStudent" class="col-sm-3 control-label"> </label>
-                <div class="col-sm-9">
-                    <input type="checkbox" id="isHighSchoolStudent" ng-model="user.isHighSchoolStudent"> I'm in high school!
-                </div>
-            </div>
-			<div class="form-group animate-show" ng-show="user.university == 'University of Cincinnati'">
-				<label for="college" class="col-sm-3 control-label">College</label>
-				<div class="col-sm-9">
-					<input type="text" class="form-control" id="college" placeholder="DAAP, CEAS, CECH, etc." ng-model="user.college">
-				</div>
-			</div>
-			<div class="form-group" ng-hide="user.isHighSchoolStudent">
-				<label for="major" class="col-sm-3 control-label">Major</label>
-				<div class="col-sm-9">
-					<input type="text" class="form-control" id="major" placeholder="Sith Lord" ng-model="user.major">
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="gender" class="col-sm-3 control-label">Gender</label>
-				<div class="col-sm-9">
-					<select class="form-control" id="gender" ng-model="user.gender" required>
-						<option value="" disabled selected>I identify my gender as...</option>
-						<option value="0">Male</option>
-						<option value="1">Female</option>
-						<option value="2">Other</option>
-					</select>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="bio" class="col-sm-3 control-label">About/Bio</label>
-				<div class="col-sm-9">
-					<textarea class="form-control" id="bio" rows="4" placeholder="Include links and a little bit about yourself." ng-model="user.bio" required></textarea>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="diet" class="col-sm-3 control-label">Dietary Restrictions</label>
-				<div class="col-sm-9">
-					<input type="text" class="form-control" id="diet" placeholder="Gluten-free, Vegetarian, Eggs, and Tomatoes" ng-model="user.diet">
-				</div>
-			</div>
-            <div class="form-group">
-                <label for="resume" class="col-sm-3 control-label">Resume</label>
-                <div class="row">
-                    <input type="hidden" class="form-control" id="resume" name="resume" ng-model="user.resume">
-                    <div class="col-lg-3">
-                        <button class="btn btn-primary" ng-click="uploadResume();">Upload Resume</button>
-                    </div>
-                    <div class="col-lg-5">
-                        <label ng-show="user.resume">{{user.resume}}</label>
-                    </div>
+  <h1>Sign-up</h1>
+  <br>
+  <br>
 
-                </div>
-            </div>
-            <div class="row" style="text-align: center;">
-                <div class="col-md-2" style="background-color: black; opacity: 0">
-                </div>
-                <div class="col-md-4" style="text-align: center;">
-                    <button class="btn btn-primary btn-lg" style="margin: 5px; width: 100%;" ng-click="submit();" ng-disabled="signupform.$invalid || !user.resume">I wanna go!</button>
-                </div>
-                <div class="col-md-4" style="text-align: center;">
-                    <button type="button" class="btn btn-danger btn-lg" style="margin:5px; width: 100%;" ng-click="forgetIt();">I changed my mind.</button>
-                </div>
-                <div class="col-md-2" style="background-color: black; opacity: 0">
-                </div>
-            </div>
+  <form class="form-horizontal" role="form" name="signupform">
+    <div class="form-group">
+      <label for="name" class="col-sm-3 control-label">Name</label>
 
-		</form>
-		<div style="height: 20px; width: 100%; background-color: black; opacity: 0"></div>
-	</div>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="name" placeholder="Darth Vader" ng-model="user.name" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email" class="col-sm-3 control-label">Email</label>
+
+      <div class="col-sm-9">
+        <input type="email" class="form-control" id="email" placeholder="dvader@mail.uc.edu" ng-model="user.email"
+               required>
+      </div>
+    </div>
+    <div class="form-group" ng-hide="user.isHighSchoolStudent">
+      <label for="university" class="col-sm-3 control-label">University</label>
+
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="university" name="university" placeholder="University of Coruscant"
+               ng-model="user.university" ng-required="!user.isHighSchoolStudent">
+      </div>
+    </div>
+    <div class="form-group" ng-show="user.isHighSchoolStudent">
+      <label for="highSchool" class="col-sm-3 control-label">High School</label>
+
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="highSchool" name="highSchool" placeholder="Tattooine High School"
+               ng-model="user.highSchool" ng-required="user.isHighSchoolStudent">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="isHighSchoolStudent" class="col-sm-3 control-label"> </label>
+
+      <div class="col-sm-9">
+        <input type="checkbox" id="isHighSchoolStudent" ng-model="user.isHighSchoolStudent"> I'm in high school!
+      </div>
+    </div>
+    <div class="form-group animate-show" ng-show="user.university == 'University of Cincinnati'">
+      <label for="college" class="col-sm-3 control-label">College</label>
+
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="college" placeholder="DAAP, CEAS, CECH, etc."
+               ng-model="user.college">
+      </div>
+    </div>
+    <div class="form-group" ng-hide="user.isHighSchoolStudent">
+      <label for="major" class="col-sm-3 control-label">Major</label>
+
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="major" placeholder="Sith Lord" ng-model="user.major">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="gender" class="col-sm-3 control-label">Gender</label>
+
+      <div class="col-sm-9">
+        <select class="form-control" id="gender" ng-model="user.gender" required>
+          <option value="" disabled selected>I identify my gender as...</option>
+          <option value="0">Male</option>
+          <option value="1">Female</option>
+          <option value="2">Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="bio" class="col-sm-3 control-label">About/Bio</label>
+
+      <div class="col-sm-9">
+        <textarea class="form-control" id="bio" rows="4" placeholder="Include links and a little bit about yourself."
+                  ng-model="user.bio" required></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="diet" class="col-sm-3 control-label">Dietary Restrictions</label>
+
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="diet" placeholder="Gluten-free, Vegetarian, Eggs, and Tomatoes"
+               ng-model="user.diet">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="resume" class="col-sm-3 control-label">Resume</label>
+
+      <div class="row">
+        <input type="hidden" class="form-control" id="resume" name="resume" ng-model="user.resume">
+
+        <div class="col-lg-3">
+          <button class="btn btn-primary" ng-click="uploadResume();">Upload Resume</button>
+        </div>
+        <div class="col-lg-5">
+          <label ng-show="user.resume">{{user.resume}}</label>
+        </div>
+
+      </div>
+    </div>
+    <div class="row" style="text-align: center;">
+      <div class="col-md-2" style="background-color: black; opacity: 0">
+      </div>
+
+      <div class="col-md-4" style="text-align: center;">
+        <button type="button" class="btn btn-danger btn-lg" style="margin:5px; width: 100%;" ng-click="forgetIt();">I
+          changed my mind.
+        </button>
+      </div>
+      <div class="col-md-4" style="text-align: center;">
+        <button class="btn btn-primary btn-lg" style="margin: 5px; width: 100%;" ng-click="submit();"
+                ng-disabled="signupform.$invalid || !user.resume">I wanna go!
+        </button>
+      </div>
+      <div class="col-md-2" style="background-color: black; opacity: 0">
+      </div>
+    </div>
+
+  </form>
+  <div style="height: 20px; width: 100%; background-color: black; opacity: 0"></div>
+</div>
