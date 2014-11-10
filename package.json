@@ -1,14 +1,15 @@
 {
-    "name": "RevolutionUC",
-    "main": "server.js",
-    "description": "RevolutionUC site F2014",
-    "repository": "https://github.com/cschumacher/RevolutionUC-F2014",
-    "dependencies": {
-        "express": "",
-        "mongoose": "",
-        "body-parser": "",
-        "method-override": "",
-        "morgan": "",
-        "aws-sdk": ""
-    }
+  "name": "RevolutionUC",
+  "main": "server.js",
+  "description": "RevolutionUC site F2014",
+  "repository": "https://github.com/cschumacher/RevolutionUC-F2014",
+  "dependencies": {
+    "express": "",
+    "mongoose": "",
+    "body-parser": "",
+    "method-override": "",
+    "morgan": "",
+    "aws-sdk": "",
+    "serve-static": ""
+  }
 }

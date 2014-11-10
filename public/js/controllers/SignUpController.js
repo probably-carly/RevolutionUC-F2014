@@ -32,6 +32,24 @@ app.controller('SignUpCtrl', function ($scope, $modal, $log) {
       $window.filepicker.pick(function (uploadedFile) {
         $scope.$apply($scope.user.resume = uploadedFile.filename);
       });
+    };
+
+    $scope.init = function () {
+      debugger;
+      if ($location.hash === "#attending") {
+        toastr.success('See you November 14th!', "Yay!");
+      }
+    };
+  })
+  .controller('AttendanceCtrl', function ($scope, $location) {
+    $scope.attending = function () {
+      toastr.success("Yay!", 'See you November 14th!');
+    };
+    $scope.init = function () {
+      debugger;
+      if ($location.hash === "#attending") {
+        toastr.success('See you November 14th!', "Yay!");
+      }
     }
   });
 
