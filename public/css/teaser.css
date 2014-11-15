@@ -1,0 +1,22 @@
+.bg {
+    background-image: -webkit-linear-gradient(70deg, #A01D21, #273248);
+    background-image: -o-linear-gradient(70deg, #A01D21, #273248);
+    background-image: -moz-linear-gradient(70deg, #A01D21, #273248);
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    color: #E2E3E2;
+}
+
+h2 {
+    color: #E2E3E2;
+}
+
+h3 {
+    color: #E2E3E2;
+}
+
+p {
+    color: #E2E3E2;
+}
