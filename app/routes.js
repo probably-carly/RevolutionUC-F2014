@@ -38,6 +38,7 @@ module.exports = function (app, mongoose) {
   });
 
   app.get('/api/hackercount', function (req, res) {
+    var ret = {};
     Hacker.count(function (err, count) {
       if (!err) {
         res.json(count);
